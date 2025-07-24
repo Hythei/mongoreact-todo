@@ -6,10 +6,12 @@ import axios from "axios";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [array, setArray] = useState( [] );
 
   const fetchAPI = async () => {
     const response = await axios.get("http://localhost:3000/api");
-    console.log(response.data);
+    setArray(response.data.fruits);
+    console.log(response.data.fruits);
   };
 
   useEffect(() => {
@@ -31,6 +33,12 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        {array.map((fruit, index) => {
+            <div key={index}>
+              <p>{fruit}</p>
+              <br></br>
+            </div>
+          })}
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>

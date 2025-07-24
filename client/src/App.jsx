@@ -33,12 +33,12 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        {array.map((fruit, index) => {
+        {array.map((fruit, index) => (
             <div key={index}>
               <p>{fruit}</p>
               <br></br>
             </div>
-          })}
+          ))}
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>

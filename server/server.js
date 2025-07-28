@@ -9,6 +9,7 @@ app.use(cors(corsOptions));
 
 app.get("/api", (req, res) => {
   res.json({ fruits: ["apple", "banana", "orange"] });
+  console.log("API called");
 });
 
 app.listen(3000, () => {

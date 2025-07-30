@@ -1,8 +1,9 @@
 /*import { useState, useEffect } from "react";*/
 import "./App.css";
 /*import axios from "axios";*/
-import Header from "./Header.jsx";
-import ToDo_Div from "./ToDo_Div.jsx";
+import Header from "./components/Header.jsx";
+import Form from "./components/Form.jsx";
+import Tasks from "./components/Tasks.jsx";
 
 function App() {
 /*  const [array, setArray] = useState( [] );
@@ -21,7 +22,8 @@ function App() {
   return (
       <>
           <Header />
-          <ToDo_Div />
+          <Form />
+          <Tasks />
       </>
   )
 }

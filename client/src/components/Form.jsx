@@ -1,26 +1,29 @@
 // This thing will focus on creating a new task
+import React, {useState} from 'react';
 
+function Form({onAddTask}){
+    const [task, setTask] = useState("");
 
-function Form(){
     const handleSubmit = (event) => {
         event.preventDefault();
-        event.target.reset();
+        if(task.trim()){
+            onAddTask(task);
+            setTask("");
+        }
     };
     return(
         <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="task">
                 <input
                     type="text"
-                    name="task"
-                    id="task"
-                    placeholder="Add a task"
+                    value={task}
+                    onChange={(event) => setTask(event.target.value)}
+                    placeholder="Add a new task"
                 />
             </label>
-            <button>
-                <span className="visually-hidden">Submit</span>
-            </button>
+            <button type="submit">Add Task</button>
         </form>
-    )
+    );
 }
 
 export default Form;

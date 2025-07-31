@@ -1,4 +1,4 @@
-/*import { useState, useEffect } from "react";*/
+import React, {useState} from "react";
 import "./App.css";
 /*import axios from "axios";*/
 import Header from "./components/Header.jsx";
@@ -18,12 +18,16 @@ function App() {
           fetchAPI();
       },
       []);*/
+    const [tasks, setTasks] = useState( [] );
+    const addTask = (newTask) => {
+        setTasks([...tasks, {id: Date.now(), text: newTask, completed: false}]);
+    };
 
   return (
       <>
           <Header />
-          <Form />
-          <Tasks />
+          <Form onAddTask={addTask}/>
+          <Tasks tasks={tasks}/>
       </>
   )
 }

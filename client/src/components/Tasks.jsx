@@ -1,10 +1,14 @@
+import React from 'react';
 
-function Tasks(){
+
+function Tasks({tasks}){
     return(
-        <>
-            <h1>Tasks</h1>
-        </>
-    )
+        <ol className="tasks_list">
+            {tasks.map(task => (
+                <li key={task.id}>{task.text}</li>
+            ))}
+        </ol>
+    );
 }
 
 export default Tasks;

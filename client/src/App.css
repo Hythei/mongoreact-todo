@@ -27,16 +27,91 @@
   }
 }
 
+.tasks_list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.tasks_list li {
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #666666;
+  transition: all 0.3s ease;
+}
+
+.tasks_list li.completed {
+  background-color: #666666;
+  border-color: #4caf50;
+}
+
+.task-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.task-text.completed-text {
+  text-decoration: line-through;
+  color: #666;
+  opacity: 0.7;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-btn, .delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.mark-done {
+  background-color: #4caf50;
+  color: white;
+}
+
+.toggle-btn.mark-done:hover {
+  background-color: #45a049;
+}
+
+.toggle-btn.mark-undone {
+  background-color: #ff9800;
+  color: white;
+}
+
+.toggle-btn.mark-undone:hover {
+  background-color: #f57c00;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #da190b;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}

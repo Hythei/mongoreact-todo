@@ -19,15 +19,32 @@ function App() {
       },
       []);*/
     const [tasks, setTasks] = useState( [] );
+
     const addTask = (newTask) => {
         setTasks([...tasks, {id: Date.now(), text: newTask, completed: false}]);
     };
+
+    const toggleTaskCompletion = (taskId) => {
+        setTasks(tasks.map(task =>
+            task.id === taskId
+                ? {...task, completed: !task.completed}
+                : task
+        ));
+    };
+
+    const deleteTask = (taskId) => {
+        setTasks(tasks.filter(task => task.id !== taskId));
+    }
 
   return (
       <>
           <Header />
           <Form onAddTask={addTask}/>
-          <Tasks tasks={tasks}/>
+          <Tasks
+              tasks={tasks}
+              onToggleCompletion={toggleTaskCompletion}
+              onDelete={deleteTask}
+          />
       </>
   )
 }

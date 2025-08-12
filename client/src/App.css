@@ -1,117 +1,69 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.to-do-list{
+  font-family: Arial, sans-serif;
   text-align: center;
+  margin-top: 100px;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+h1{
+  font-size: 4rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.tasks_list {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.tasks_list li {
-  margin: 10px 0;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #666666;
-  transition: all 0.3s ease;
-}
-
-.tasks_list li.completed {
-  background-color: #666666;
-  border-color: #4caf50;
-}
-
-.task-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-}
-
-.task-text {
-  flex: 1;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.task-text.completed-text {
-  text-decoration: line-through;
-  color: #666;
-  opacity: 0.7;
-}
-
-.task-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.toggle-btn, .delete-btn {
-  padding: 8px 12px;
+button{
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
+  transition: background-color 0.5 ease;
 }
 
-.toggle-btn.mark-done {
-  background-color: #4caf50;
-  color: white;
+.add-button{
+  background-color: blue;
+}
+.add-button:hover{
+  background-color: blueviolet;
+}
+.delete-button{
+  background-color: rgb(158, 16, 94);
+}
+.delete-button:hover{
+  background-color: blueviolet;
+}
+.move-button{
+  background-color: rgb(178, 179, 128);
+}
+.move-button:hover{
+  background-color: blueviolet;
 }
 
-.toggle-btn.mark-done:hover {
-  background-color: #45a049;
+input[type="text"]{
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
 }
+ol{
+  padding: 0;
 
-.toggle-btn.mark-undone {
-  background-color: #ff9800;
-  color: white;
 }
-
-.toggle-btn.mark-undone:hover {
-  background-color: #f57c00;
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15;
+  background-color: aliceblue;
+  margin-bottom: 10px;
+  border: 3px solid red;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
-
-.delete-btn {
-  background-color: #f44336;
-  color: white;
+.text{
+  flex:1;
 }
-
-.delete-btn:hover {
-  background-color: #da190b;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.delete-button, .move-button{
+  padding: 8px 12px;
+  font-size: 1.5rem;
+  margin-left: 10px;
 }
 
 

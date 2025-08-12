@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import "./App.css";
+
 /*import axios from "axios";*/
 import Header from "./components/Header.jsx";
-import Form from "./components/Form.jsx";
-import Tasks from "./components/Tasks.jsx";
+import ToDoList from "./components/ToDoList.jsx";
 
 function App() {
 /*  const [array, setArray] = useState( [] );
@@ -20,9 +19,6 @@ function App() {
       []);*/
     const [tasks, setTasks] = useState( [] );
 
-    const addTask = (newTask) => {
-        setTasks([...tasks, {id: Date.now(), text: newTask, completed: false}]);
-    };
 
     const toggleTaskCompletion = (taskId) => {
         setTasks(tasks.map(task =>
@@ -39,12 +35,7 @@ function App() {
   return (
       <>
           <Header />
-          <Form onAddTask={addTask}/>
-          <Tasks
-              tasks={tasks}
-              onToggleCompletion={toggleTaskCompletion}
-              onDelete={deleteTask}
-          />
+          <ToDoList />
       </>
   )
 }

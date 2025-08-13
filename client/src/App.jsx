@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 
 /*import axios from "axios";*/
-import Header from "./components/Header.jsx";
+
 import ToDoList from "./components/ToDoList.jsx";
+import "./App.css";
 
 function App() {
 /*  const [array, setArray] = useState( [] );
@@ -17,27 +18,13 @@ function App() {
           fetchAPI();
       },
       []);*/
-    const [tasks, setTasks] = useState( [] );
 
-
-    const toggleTaskCompletion = (taskId) => {
-        setTasks(tasks.map(task =>
-            task.id === taskId
-                ? {...task, completed: !task.completed}
-                : task
-        ));
-    };
-
-    const deleteTask = (taskId) => {
-        setTasks(tasks.filter(task => task.id !== taskId));
-    }
 
   return (
-      <>
-          <Header />
+      <div className="App">
           <ToDoList />
-      </>
-  )
+      </div>
+  );
 }
 
 

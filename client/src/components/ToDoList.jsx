@@ -5,21 +5,21 @@ import Header from './Header.jsx';
 import { useTasks } from '../hooks/useTasks.js';
 
 function ToDoList(){
-    const { tasks, addTask, deleteTask, moveTaskUp, moveTaskDown } = useTasks();
+    const { tasks, addTask, deleteTask, loading, error } = useTasks();
 
     return(
         <div className="to-do-list">
             <Header />
             <TaskForm onAddTask={addTask} />
+
+            {loading && <p>Loading...</p>}
+            {error && <p style={{color:'red'}}>{error}</p>}
             <ol>
-                {tasks.map((task, index) => (
+                {tasks.map((task) => (
                     <TaskItem
-                        key={index}
+                        key={task._id}
                         task={task}
-                        index={index}
                         onDelete={deleteTask}
-                        onMoveUp={moveTaskUp}
-                        onMoveDown={moveTaskDown}
                     />
                     ))}
             </ol>

@@ -1,7 +1,15 @@
+.App{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+
+}
+
 .to-do-list{
   font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 100px;
+  max-width: 600px;
 }
 h1{
   font-size: 4rem;
@@ -14,27 +22,14 @@ button{
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.5 ease;
 }
-
 .add-button{
   background-color: blue;
 }
 .add-button:hover{
   background-color: blueviolet;
 }
-.delete-button{
-  background-color: rgb(158, 16, 94);
-}
-.delete-button:hover{
-  background-color: blueviolet;
-}
-.move-button{
-  background-color: rgb(178, 179, 128);
-}
-.move-button:hover{
-  background-color: blueviolet;
-}
+
 
 input[type="text"]{
   font-size: 1.6rem;
@@ -49,7 +44,7 @@ ol{
 li{
   font-size: 2rem;
   font-weight: bold;
-  padding: 15;
+  padding: 5px;
   background-color: aliceblue;
   margin-bottom: 10px;
   border: 3px solid red;
@@ -60,10 +55,45 @@ li{
 .text{
   flex:1;
 }
-.delete-button, .move-button{
+
+
+
+.delete-button{
   padding: 8px 12px;
   font-size: 1.5rem;
   margin-left: 10px;
+  background-color: rgb(158, 16, 94);
 }
 
+.delete-button:hover{
+  background-color: blueviolet;
+}
+
+.status-button{
+  padding: 8px 12px;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  background-color: rgb(158, 16, 94);
+}
+
+
+.status-button.completed {
+  background-color: #4CAF50;
+  color: white;
+}
+.status-button.completed:hover {
+  background-color: #f44336;
+}
+
+.status-button.pending {
+  background-color: #f44336;
+  color: white;
+}
+.status-button.pending:hover {
+  background-color: #4CAF50;
+}
+
+.text.completed {
+  opacity: 0.6;
+}
 

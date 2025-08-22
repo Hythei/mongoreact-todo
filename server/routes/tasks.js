@@ -34,7 +34,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-//Updating a task - basically seeing switching it to completed
+//Updating a task
 router.patch('/:id', async (req, res) => {
     try{
         const { id } = req.params;
